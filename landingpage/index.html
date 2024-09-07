@@ -22,7 +22,8 @@
   <main class="pt-8 lg:pt-12">
     <div class="lg:bg-gradient-to-t lg:from-gradient lg:to-white lg:flex lg:justify-center lg:items-start lg:pb-[88px]">
       <section class="bg-gradient-to-t from-gradient to-white pb-[250px] px-3 lg:pb-0 lg:bg-none">
-        <h1 class="text-3xl md:text-4xl font-extrabold text-primary text-center max-w-[420px] m-auto lg:text-left">The Skincare App
+        <h1 class="text-3xl md:text-4xl font-extrabold text-primary text-center max-w-[420px] m-auto lg:text-left">The
+          Skincare App
           That Helps You
           Glow&nbsp;✨</h1>
         <section class="pt-8">
@@ -64,7 +65,8 @@
         </section>
       </section>
       <section class="pt-12 px-[5vw] -mt-[245px] lg:-mt-0 lg:pt-0">
-        <div class="border-dark border-2 bg-white drop-shadow-xl rounded-lg px-4 max-w-[530px] m-auto lg:px-16 lg:max-w-[500px]">
+        <div
+          class="border-dark border-2 bg-white drop-shadow-xl rounded-lg px-4 max-w-[530px] m-auto lg:px-16 lg:max-w-[500px]">
           <div class="w-full max-w-10 m-auto -mt-6">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
               class="fill-secondary"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -76,30 +78,73 @@
             <p class="text-center">
               <span class="text-primary font-bold">Signup</span> to be the first to <span class="font-bold">gain early
                 access</span> and instantly receive a <span class="text-primary font-bold">free guide</span> on
-              how to optimize your existing skincare routine 
+              how to optimize your existing skincare routine
             </p>
           </div>
-          <form action="">
-            <div class="max-w-[300px] px-2 m-auto pt-6 lg:max-w-full">
-              <div
-                class="flex items-center border-2 border-black rounded-lg p-2 py-1 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-300 transition-colors">
-                <img src="./assets/envelop.svg" alt="envelop" class="w-9 -ml-7">
-                <input type="email" placeholder="email address" class="flex-1 border-none outline-none p-1 text-base"
-                  required>
+          <div id="mc_embed_signup">
+            <form
+              action="https://gmail.us22.list-manage.com/subscribe/post?u=ff3d9e2cecee81fb2798c107a&amp;id=f3fe698b9e&amp;f_id=000ed3e1f0"
+              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+              <div class="max-w-[300px] px-2 m-auto pt-6 lg:max-w-full">
+                <div
+                  class="flex items-center border-2 border-black rounded-lg p-2 py-1 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-300 transition-colors">
+                  <img src="./assets/envelop.svg" alt="envelop" class="w-9 -ml-7">
+                  <input type="email" placeholder="email address" class="flex-1 border-none outline-none p-1 text-base"
+                    name="EMAIL" id="mce-EMAIL" value="" required>
+                </div>
+                <div class="flex items-start gap-x-2 pt-4">
+                  <input id="terms" type="checkbox" class="mt-1 cursor-pointer scale-125" required />
+                  <input type="text" name="MMERGE7" class="hidden" id="mce-MMERGE7" value="yes">
+                  <label class="text-xs" for="terms">
+                    <p>I agree to the <a href="/terms.html" target="_blank" class="underline cursor-pointer">Terms for
+                        Providing My Email</a> and
+                      consent to receive communications, including promotional emails and the free skincare guide.</p>
+                  </label>
+                </div>
               </div>
-              <div class="flex items-start gap-x-2 pt-4">
-                <input id="terms" type="checkbox" class="mt-1 cursor-pointer scale-125" required />
-                <label class="text-xs" for="terms">
-                  <p>I agree to the <a href="/terms.html" target="_blank" class="underline cursor-pointer">Terms for Providing My Email</a> and
-                    consent to receive communications, including promotional emails and the free skincare guide.</p>
-                </label>
+              <div class="flex justify-center pt-6 pb-10">
+                <input type="submit" name="subscribe" id="mc-embedded-subscribe"
+                  class="bg-secondary hover:bg-btn-hover cursor-pointer p-2 text-white font-semibold rounded-lg px-4 block text-lg" />
               </div>
-            </div>
-            <div class="flex justify-center pt-6 pb-10">
-              <button
-                class="bg-secondary hover:bg-btn-hover p-2 text-white font-semibold rounded-lg px-4 block text-lg">signup</button>
-            </div>
-          </form>
+              <div aria-hidden="true" style="position: absolute; left: -5000px;"></div>
+              <input class="hidden" type="text" name="b_ff3d9e2cecee81fb2798c107a_f3fe698b9e" tabindex="-1" value="">
+            </form>
+          </div>
+          
+          <!-- Include Mailchimp script -->
+          <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+          
+          <!-- Custom redirect script -->
+          <script>
+            document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(event) {
+              event.preventDefault(); // Prevent default form submission behavior
+          
+              // Check if the form is valid
+              if (!this.checkValidity()) {
+                // If the form is invalid, display the browser's default validation messages
+                this.reportValidity();
+                return; // Stop form submission if validation fails
+              }
+          
+              // Proceed with form submission if validation passes
+              var form = this;
+              var formData = new FormData(form);
+          
+              // Send the form data to Mailchimp via AJAX
+              fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+              }).then(function() {
+                // Redirect to your custom thank you page after successful submission
+                window.location.href = '/free-guide.html';
+              }).catch(function(error) {
+                console.error('Error:', error); // Handle any errors
+              });
+            });
+          </script>
+          
+
         </div>
       </section>
     </div>
