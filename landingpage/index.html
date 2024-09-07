@@ -119,6 +119,8 @@
             document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(event) {
               event.preventDefault(); // Prevent default form submission behavior
           
+              document.getElementById('mc-embedded-subscribe').value = 'Submitting...';
+              
               // Check if the form is valid
               if (!this.checkValidity()) {
                 // If the form is invalid, display the browser's default validation messages
