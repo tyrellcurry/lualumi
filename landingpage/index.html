@@ -118,8 +118,6 @@
           <script>
             document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(event) {
               event.preventDefault(); // Prevent default form submission behavior
-          
-              document.getElementById('mc-embedded-subscribe').value = 'Submitting...';
               
               // Check if the form is valid
               if (!this.checkValidity()) {
@@ -127,6 +125,8 @@
                 this.reportValidity();
                 return; // Stop form submission if validation fails
               }
+
+              document.getElementById('mc-embedded-subscribe').value = 'Submitting...';
           
               // Proceed with form submission if validation passes
               var form = this;
